@@ -31,5 +31,8 @@
     "@types/howler": "^2.2.11",
     "prettier": "3.1.1",
     "prettier-plugin-astro": "^0.12.3"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.12.0"
   }
 }
