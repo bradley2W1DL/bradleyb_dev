@@ -29,8 +29,8 @@ const defaultSeconds = 300 // 5 minutes
 
 export function editTimer(): EditTimer {
   return {
-    minutes: this.$persist(0),
-    seconds: this.$persist(0),
+    minutes: 5,
+    seconds: 0,
     editStartTime: false,
     onSubmit() {
       this.secondsCount = (Number(this.minutes * 60)) + Number(this.seconds)

@@ -43,6 +43,11 @@ import "../styles/meditate.scss"
 
 <script>
   import Alpine from 'alpinejs'
+  import persist from '@alpinejs/persist'
+  // optional: allows for tinkering with alpine object in console
+  // window.Alpine = Alpine
+  Alpine.plugin(persist)
+
   import meditationTimerData, {editTimer} from '@alpine/meditationTimerData'
 
   // all state here coming from AlpineJS
@@ -50,4 +55,8 @@ import "../styles/meditate.scss"
     Alpine.data('meditatonTimer', meditationTimerData)
     Alpine.data('editTimer', editTimer)
   })
+
+  // in order to import data functions as above, need to start Alpine here rather than
+  // in Layout component
+  Alpine.start()
 </script>
