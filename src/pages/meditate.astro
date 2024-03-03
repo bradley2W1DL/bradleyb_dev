@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import "../styles/meditate.scss"
+---
+
+<Layout title="meditate">
+  <div class="main">
+    <div class="main__content meditate">
+      <h3>Meditation / Yoga timer</h3>
+
+      <div class="timer" x-data="meditatonTimer">
+        <div x-data="editTimer">
+          <form 
+            x-show="editStartTime"
+            @click.outside="editStartTime = false"
+            @keydown.enter="onSubmit()"
+          >
+            <input type="number" x-model="minutes">
+            <input type="number" x-model="seconds">
+          </form>
+          <h1
+            x-show="!editStartTime"
+            x-on:click="editStartTime = true"
+          >
+            [ <span x-text="formatSeconds()" /> ]
+          </h1>
+        </div>
+        <hr>
+        <div class="timer__action-btns">
+          <button @click='startTimer()'>start</button>
+          <button @click='stopTimer()'>stop</button>
+          <button @click='stopTimer(true)'>reset</button>
+        </div>
+        <div
+          style="display:none;"
+          x-init="$watch('secondsCount', minuteChime)"
+        />
+      </div>      
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import Alpine from 'alpinejs'
+  import persist from '@alpinejs/persist'
+  // optional: allows for tinkering with alpine object in console
+  // window.Alpine = Alpine
+  Alpine.plugin(persist)
+
+  import meditationTimerData, {editTimer} from '@alpine/meditationTimerData'
+
+  // all state here coming from AlpineJS
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('meditatonTimer', meditationTimerData)
+    Alpine.data('editTimer', editTimer)
+  })
+
+  // in order to import data functions as above, need to start Alpine here rather than
+  // in Layout component
+  Alpine.start()
+</script>
