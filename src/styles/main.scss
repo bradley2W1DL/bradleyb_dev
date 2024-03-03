@@ -1,0 +1,77 @@
+@import "normalize";
+@import "skeleton";
+// ---
+@import "variables";
+
+.main {
+  margin: 0 auto;
+  margin-top: 6rem;
+  height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__hero {
+    width: 120%;
+    img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 0.6rem;
+    }
+  }
+
+  &__buttons {
+    margin-top: 3rem;
+  }
+
+  &__action-button {
+    &:first-of-type {
+      margin-left: 13%;
+    }
+    
+    &:hover {
+      color: $cream;
+      &::after {
+        content: "";
+        display: inline-block;
+        position: relative;
+        height: 3.5rem;
+        width: 150%;
+        bottom: 3.1rem;
+        right: 2rem;
+        float: left;
+        z-index: -10;
+        background: $pink-hover;
+        border-radius: 4px 0;
+      }
+    }
+
+    &:active {
+      color: initial;
+      &::after {
+        right: 3rem;
+        bottom: 3.7rem;
+        width: 148%;
+      }
+    }
+  }
+
+  &__signature {
+    margin-top: 3rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    p {
+      color: $tea-green;
+    }
+  }
+}

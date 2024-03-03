@@ -1,0 +1,14 @@
+@import "variables";
+
+.meditate {
+  .timer {
+    border: 1px solid $tea-green;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    
+    hr {
+      width: 100;
+    }
+  }
+}
