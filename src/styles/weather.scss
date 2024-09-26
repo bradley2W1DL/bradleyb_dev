@@ -1,0 +1,22 @@
+// styles for swapy containers...
+
+.flex {
+  display: flex;
+}
+
+.sidecar {
+  display: flex;
+  flex-direction: column;
+}
+
+.element {
+  border-radius: 20px;
+  flex: 1;
+  margin: 0.5rem;
+  padding: 1rem 1.25rem;
+  background-color: teal;
+}
+
+.jumbo {
+  height: 20vh;
+}

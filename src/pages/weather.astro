@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro'
+import '../styles/weather.scss'
+
+---
+
+<Layout title="Weather">
+  <div class="main">
+    <div class="main__content">
+      <div class="row flex primary">
+        <div class="swapy-container" data-swapy-slot="jumbo-swapy-1">
+          <div class="element jumbo" data-swapy-item="jumbo-item">
+            <h1>presumably the focus</h1>
+          </div>
+        </div>
+        <div class="sidecar">
+          <div class="swapy-container" data-swapy-slot="sidecar-1">
+            <div class="element" data-swapy-item="sidecar-item-1">
+              <p>element two - top</p>
+            </div>
+          </div>
+          <div class="swapy-container" data-swapy-slot="sidecar-2">
+            <div class="element" data-swapy-item="sidecar-item-2">
+              <p>element three - bottom</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row flex secondary">
+        <div class="element">
+          <p>yaaasss</p>
+        </div>
+        <div class="element">
+          <p>yaaasss</p>
+        </div>
+        <div class="element">
+          <p>yaaasss</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { createSwapy } from 'swapy'
+  const container = document.querySelector('.main__content')
+
+  const swapy = createSwapy(container, {
+    animation: 'dynamic',
+  })
+
+  swapy.enable(true)
+</script>
