@@ -2,40 +2,38 @@
 import Layout from '../layouts/Layout.astro'
 import '../styles/weather.scss'
 
+// how could the FE location selector be tied to BE htmx requests?
+// Big thing would be to not expose API key to FE.:w
+
 ---
 
 <Layout title="Weather">
-  <div class="main">
-    <div class="main__content">
-      <div class="row flex primary">
-        <div class="swapy-container" data-swapy-slot="jumbo-swapy-1">
-          <div class="element jumbo" data-swapy-item="jumbo-item">
-            <h1>presumably the focus</h1>
-          </div>
-        </div>
-        <div class="sidecar">
-          <div class="swapy-container" data-swapy-slot="sidecar-1">
-            <div class="element" data-swapy-item="sidecar-item-1">
-              <p>element two - top</p>
-            </div>
-          </div>
-          <div class="swapy-container" data-swapy-slot="sidecar-2">
-            <div class="element" data-swapy-item="sidecar-item-2">
-              <p>element three - bottom</p>
-            </div>
-          </div>
-        </div>
+  <div class="weather weather__container">
+    <div class="primary" data-swapy-slot="primary">
+      <div class="element" data-swapy-item="primary-item">
+        <!-- within each element here could be a separate astro component -->
+        <!-- it would have to be veryy responsive though given the swapy use -->
+        <h1>weather</h1>
+        <p><strong>show all pertinent current weather data</strong></p>
       </div>
-      <div class="row flex secondary">
-        <div class="element">
-          <p>yaaasss</p>
-        </div>
-        <div class="element">
-          <p>yaaasss</p>
-        </div>
-        <div class="element">
-          <p>yaaasss</p>
-        </div>
+    </div>
+
+    <div class="sidecar_1" data-swapy-slot="sidecar_1">
+      <div class="element" data-swapy-item="sidecar_1-item">
+        <h4>hourly data</h4>
+      </div>
+    </div>
+
+    <div class="sidecar_2" data-swapy-slot="sidecar_2">
+      <div class="element" data-swapy-item="sidecar_2-item">
+        <h4>10 day forcast <b/> don't know if this is a thing</h4>
+      </div>
+    </div>
+
+    <div class="secondary">
+      <div class="element">
+        <h4>Location selector element</h4>
+        <p>Static (no swapy) location selector -- default to current location if possible</p>
       </div>
     </div>
   </div>
@@ -43,7 +41,7 @@ import '../styles/weather.scss'
 
 <script>
   import { createSwapy } from 'swapy'
-  const container = document.querySelector('.main__content')
+  const container = document.querySelector('.weather__container')
 
   const swapy = createSwapy(container, {
     animation: 'dynamic',

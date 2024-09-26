@@ -1,22 +1,39 @@
-// styles for swapy containers...
+.weather {
+  &__container {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: repeat(2, 20vh) 10vh;
+    grid-gap: 1rem;
+    grid-template-areas:
+      "main sidecar_1"
+      "main sidecar_2"
+      "secondary secondary";
+  }
 
-.flex {
-  display: flex;
-}
+  .primary, .sidecar_1, .sidecar_2, .secondary {
+    display: grid; // allow sub items to stretch to fill
+  }
 
-.sidecar {
-  display: flex;
-  flex-direction: column;
-}
+  .element {
+    border-radius: 10px;
+    background-color: beige;
+    padding: 1rem;
+  }
 
-.element {
-  border-radius: 20px;
-  flex: 1;
-  margin: 0.5rem;
-  padding: 1rem 1.25rem;
-  background-color: teal;
-}
+  .primary {
+    grid-area: main;
+  }
 
-.jumbo {
-  height: 20vh;
+  .sidecar_1 {
+    grid-area: sidecar_1;
+  }
+
+  .sidecar_2 {
+    grid-area: sidecar_2;
+  }
+
+  .secondary {
+    grid-area: secondary;
+  }
 }
