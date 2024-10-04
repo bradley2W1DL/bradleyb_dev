@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { actions } from 'astro:actions'
 import '../styles/weather.scss'
+
+export const prerender = false
 
 // how could the FE location selector be tied to BE htmx requests?
 // Big thing would be to not expose API key to FE.:w
-
+const { data, error } = await Astro.callAction(actions.weather.getCurrent, { lat: 22, long: 33 })
 ---
 
 <Layout title="Weather">
@@ -15,6 +18,7 @@ import '../styles/weather.scss'
         <!-- it would have to be veryy responsive though given the swapy use -->
         <h1>weather</h1>
         <p><strong>show all pertinent current weather data</strong></p>
+        <p>{data}</p>
       </div>
     </div>
 
