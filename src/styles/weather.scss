@@ -3,8 +3,8 @@
     margin-top: 10%;
     display: grid;
     grid-template-columns: 70% 1fr;
-    grid-template-rows: repeat(2, 20vh) 10vh;
-    grid-gap: 1rem;
+    grid-template-rows: repeat(2, 25vh) 10vh;
+    grid-gap: 0.8rem;
     grid-template-areas:
       "main sidecar_1"
       "main sidecar_2"

@@ -6,8 +6,10 @@ import '../styles/weather.scss'
 export const prerender = false
 
 // how could the FE location selector be tied to BE htmx requests?
-// Big thing would be to not expose API key to FE.:w
-const { data, error } = await Astro.callAction(actions.weather.getCurrent, { lat: 22, long: 33 })
+// I think this "action" can be triggered by component event handlers
+const defaultLocation = { lat: 39.74386298827478, long: -105.52532873734599 }
+const { data } = await Astro.callAction(actions.weather.getCurrent, defaultLocation)
+console.log('data:', data)
 ---
 
 <Layout title="Weather">
@@ -18,7 +20,7 @@ const { data, error } = await Astro.callAction(actions.weather.getCurrent, { lat
         <!-- it would have to be veryy responsive though given the swapy use -->
         <h1>weather</h1>
         <p><strong>show all pertinent current weather data</strong></p>
-        <p>{data}</p>
+        <p>Weather Data:<br><code>{data}</code></p>
       </div>
     </div>
 
@@ -38,6 +40,7 @@ const { data, error } = await Astro.callAction(actions.weather.getCurrent, { lat
       <div class="element">
         <h4>Location selector element</h4>
         <p>Static (no swapy) location selector -- default to current location if possible</p>
+        <p>this may need to be a React Island</p>
       </div>
     </div>
   </div>
@@ -46,10 +49,8 @@ const { data, error } = await Astro.callAction(actions.weather.getCurrent, { lat
 <script>
   import { createSwapy } from 'swapy'
   const container = document.querySelector('.weather__container')
-
   const swapy = createSwapy(container, {
     animation: 'dynamic',
   })
-
   swapy.enable(true)
 </script>
