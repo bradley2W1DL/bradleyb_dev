@@ -1,8 +1,8 @@
-@import "variables";
+@use "variables";
 
 .meditate {
   .timer {
-    border: 1px solid $tea-green;
+    border: 1px solid variables.$tea-green;
     border-radius: 5px;
     display: flex;
     flex-direction: column;

@@ -1,7 +1,6 @@
-@import "normalize";
-@import "skeleton";
-// ---
-@import "variables";
+@use "normalize";
+@use "skeleton";
+@use "variables";
 
 .main {
   margin: 0 auto;
@@ -37,7 +36,7 @@
     }
     
     &:hover {
-      color: $cream;
+      color: variables.$cream;
       &::after {
         content: "";
         display: inline-block;
@@ -48,7 +47,7 @@
         right: 2rem;
         float: left;
         z-index: -10;
-        background: $pink-hover;
+        background: variables.$pink-hover;
         border-radius: 4px 0;
       }
     }
@@ -71,7 +70,7 @@
     display: flex;
     justify-content: space-between;
     p {
-      color: $tea-green;
+      color: variables.$tea-green;
     }
   }
 }
