@@ -1,28 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets'
+import headshot from '../images/me_ski.svg'
 
-import burgerImg from '../images/burger_sketch.jpg'
-
-// import "../styles/main.scss"
+import "../styles/home.scss"
 ---
 
 <Layout title="Sandbox">
-  <div class="main">
-    <div class="main__content">
-      <div class="row main__hero">
-        <Image src={burgerImg} alt="Burger painting" />
+  <div id="triangle-gradient" />
+
+  <div class="home">
+    <div class="home__header">
+      <div class="logo">
+        <div id="burger"></div>
+        <h1>bradley berger</h1>
       </div>
 
-      <div class="row colummn main__buttons">
-        <a href="/weather" class="button three columns main__action-button">W</a>
-        <a href="/meditate" class="button three columns main__action-button">M</a>
-        <a class="button three columns main__action-button">V</a>
-      </div>
+      <button>resume</button>
     </div>
 
-    <div class="main__footer row">
-      <p class="two columns">bradley_b dev</p>
-      <p class="two columns offset-by-eight">created {new Date("1/7/2024").toLocaleDateString('en-US')}</p>
+    <div class="home__main">
+      <div class="title">
+        <h2>Software Engineer &cetera</h2>
+      </div>
+
+      <div class="headshot">
+        <Image src={headshot} alt="bradley skiing" />
+      </div>
+
+      <div class="about">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      </div>
+    </div>
   </div>
 </Layout>
