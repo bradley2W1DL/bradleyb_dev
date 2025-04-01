@@ -25,14 +25,12 @@
       display: flex;
     }
 
-
     #burger {
       // placeholder for actual logo
       width: 60px;
-      height: 60px;
+      height: fit-content;
       margin-right: 1.5rem;
-      background: black;
-      border-radius: 50%;
+      padding: 5px;
     }
 
   }
@@ -46,8 +44,8 @@
     .title {
       grid-area: title;
       z-index: 3;
-      margin-right: -5rem;
-      margin-top: 10rem;
+      margin-right: -9rem;
+      margin-top: 11rem;
       h2 {
         font-weight: 100;
         font-size: 3rem;
@@ -69,6 +67,7 @@
       align-self: end;
       z-index: 3;
       margin-left: -2rem;
+      margin-bottom: 3rem;
     }
   }
 }
