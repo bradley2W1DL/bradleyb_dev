@@ -26,7 +26,6 @@
     }
 
     #burger {
-      // placeholder for actual logo
       width: 50px;
       height: fit-content;
       margin-right: 1.5rem;
@@ -38,6 +37,7 @@
   &__main {
     display: grid;
     width: 100%;
+    margin-top: 7vh;
     grid-template-areas: 'title image caption';
     grid-template-columns: 1fr 2fr 1fr;
 
