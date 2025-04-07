@@ -1,19 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+
+import logo from '../images/resume_logo.svg';
+import email from '../images/mail_logo.svg';
+import phone from '../images/phone_logo.svg';
+import home from '../images/home_logo.svg';
+import backIcon from '../images/back_arrow.svg'
 
 import "../styles/resume.scss"
 ---
 
 <Layout title="curriculum vitae">
   <div class="resume">
+    <a href="/" class="back">
+      <Image src={backIcon} alt="back arrow icon" />
+    </a>
     <div class="resume__header">
-      <div class="resume-logo"></div>
+      <div class="resume-logo">
+        <Image id="logo" src={logo} alt="mountain logo" />
+      </div>
       <h1 class="name">Bradley Berger</h1>
       <h4 class="title">Senior Software Engineer</h4>
       <div class="contact">
-        <p class="email">bradley.s.berger@gmail.com</p>
-        <p class="phone">970.531.8390</p>
-        <p class="location">Idaho Springs, CO</p>
+        <div class="contact__element">
+          <Image src={email} alt="email icon" />
+          <p>bradley.s.berger@gmail.com</p>
+        </div>
+        <div class="contact__element">
+          <Image src={phone} alt="cell phone icon" />
+          <p>970.531.8390</p>
+        </div>
+        <div class="contact__element">
+          <Image src={home} alt="house icon" />
+          <p>Idaho Springs, CO</p>
+        </div>
       </div>
     </div>
     <div class="resume__body">
