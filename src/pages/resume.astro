@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+import "../styles/resume.scss"
+---
+
+<Layout title="curriculum vitae">
+  <div class="resume">
+    <div class="resume__header">
+      <div class="resume-logo"></div>
+      <h1 class="name">Bradley Berger</h1>
+      <h4 class="title">Senior Software Engineer</h4>
+      <div class="contact">
+        <p class="email">bradley.s.berger@gmail.com</p>
+        <p class="phone">970.531.8390</p>
+        <p class="location">Idaho Springs, CO</p>
+      </div>
+    </div>
+    <div class="resume__body">
+      <div class="resume__row">
+        <p class="row-title">profile</p>
+        <div class="row-content">
+          <p>
+            Senior software engineer with 9 years of experience in full-stack web development,
+            specializing in building resilient, secure, and user-friendly applications in the
+            FinTech sector. Extensive experience in Ruby on Rails and Javascript,
+            particularly with React. Experience with both monolith and micro-services architecture
+            with a pragmatic understanding of the strengths and weakness of both.
+            Strong ability to translate business needs into technology-driven solutions.
+            Self-motivated and adaptable, thriving in fast-paced environments.
+          </p>
+        </div>
+      </div>
+      <div class="resume__row">
+        <p class="row-title">skills</p>
+        <div class="row-content">
+          <div class="skills-group">
+            <h2>front-end</h2>
+            <ul>
+              <li>Javascript / Typescript</li>
+              <li>React / Redux / RTK Query</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <h2>backend</h2>
+            <ul>
+              <li>Ruby on Rails</li>
+              <li>NodeJS</li>
+              <li>SQL / PostgreSQL</li>
+              <li>REST</li>
+              <li>GraphQL / Apollo</li>
+              <li>Docker / k8s</li>
+              <li>RabbitMQ / RPC</li>
+              <li>Saga events pattern</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume__row">
+        <p class="row-title">experience</p>
+        <div class="row-content">
+          <div class="experience-group">
+            <h2>Maxwell Financial Labs - Senior Software Engineer, 2021 - 2025</h2>
+            <ul>
+              <li>
+                Worked as part of a small team to implement a full redesign of a highly customizable
+                enterprise-grade mortgage application experience using modern React patterns and redux
+                toolkit to query a json-api spec compliant rails backend. Acted as technical lead on large
+                aspects of the project, mentoring junior engineers, breaking down work, and coordinating
+                engineering resources to complete that work.
+              </li>
+              <li>
+                Enhanced an existing loan pricing product to integrate with a third-party fees engine to add 
+                realistic closing costs to specific loan products. The React SPA triggers sagapatterned events 
+                via Apollo GraphQL to call Rails micro-services to fetch and parse fees data.
+              </li>
+              <li>
+                Implemented key aspects of a fully redesigned borrower experience which greatly improved
+                our borrower drop-off rate and overall satisfaction with our product. Worked closely with
+                our designer to ensure the highest quality product was delivered while using strong software
+                design patterns for easy developer understanding and future iteration.
+              </li>
+            </ul>
+          </div>
+          <div class="experience-group">
+            <h2>DigniFi - Senior Software Engineer, 2015 - 2021</h2>
+            <ul>
+              <li>
+                Implemented a redesigned customer application process using React/Redux to
+                improve the overall customer experience, while also integrating a new third-party data
+                source to improve fraud detection and customer identification.
+              </li>
+              <li>
+                Designed, developed, and maintained a micro-services application to connect with
+                credit and alternative credit providers. The application uses the ServerlessJS library to
+                deploy node functions into AWS; specifically using ApiGateway, Lambda, RDS, and S3
+              </li>
+              <li>
+                Developed a ReactNative POC application targeting our primary sales channel to
+                enable those users to more easily perform tasks required for loan finalization as well
+                as manage the payments of incentives offered by DigniFi.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="resume__row">
+        <p class="row-title">education</p>
+        <div class="row-content">
+          <h3>DaVinci Coders - Ruby on Rails Bootcamp - Summer 2015</h3>
+          <h3>University of Colorado Boulder - BS/BA</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
