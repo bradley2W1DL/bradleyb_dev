@@ -24,3 +24,4 @@ yarn-error.log*
 .env
 dist/
 yarn.lock
+resume.vim
