@@ -5,36 +5,28 @@ import '../styles/weather.scss'
 ---
 
 <Layout title="Weather">
-  <div class="main">
-    <div class="main__content">
-      <div class="row flex primary">
-        <div class="swapy-container" data-swapy-slot="jumbo-swapy-1">
-          <div class="element jumbo" data-swapy-item="jumbo-item">
-            <h1>presumably the focus</h1>
-          </div>
-        </div>
-        <div class="sidecar">
-          <div class="swapy-container" data-swapy-slot="sidecar-1">
-            <div class="element" data-swapy-item="sidecar-item-1">
-              <p>element two - top</p>
-            </div>
-          </div>
-          <div class="swapy-container" data-swapy-slot="sidecar-2">
-            <div class="element" data-swapy-item="sidecar-item-2">
-              <p>element three - bottom</p>
-            </div>
-          </div>
+  <div class="weather">
+    <div class="weather__header">
+      <h3>here be the search bar / current location info &mdash;</h3>
+      <input type="text" />
+    </div>
+
+    <div class="weather__content">
+      <div class="weather__main swapy-container element" data-swapy-slot="main">
+        <div data-swapy-item="main-item">
+          <h1>Current Weather for location</h1>
         </div>
       </div>
-      <div class="row flex secondary">
-        <div class="element">
-          <p>yaaasss</p>
+
+      <div class="weather__secondary swapy-container element" data-swapy-slot="secondary">
+        <div data-swapy-item="secondary-item">
+          <p>Hourly weather</p>
         </div>
-        <div class="element">
-          <p>yaaasss</p>
-        </div>
-        <div class="element">
-          <p>yaaasss</p>
+      </div>
+
+      <div class="weather__tertiary swapy-container element" data-swapy-slot="bottom-row">
+        <div data-swapy-item="bottom-item">
+          <p>10 day forecast</p>
         </div>
       </div>
     </div>
@@ -43,7 +35,7 @@ import '../styles/weather.scss'
 
 <script>
   import { createSwapy } from 'swapy'
-  const container = document.querySelector('.main__content')
+  const container = document.querySelector('.weather__content')
 
   const swapy = createSwapy(container, {
     animation: 'dynamic',

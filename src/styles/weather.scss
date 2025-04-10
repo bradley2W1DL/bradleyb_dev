@@ -1,22 +1,46 @@
 // styles for swapy containers...
 
-.flex {
-  display: flex;
-}
+.weather {
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #999;
+    text-align: right;
+    h3 {
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: 66% auto;
+    grid-template-rows: 80% auto;
+    grid-template-areas:
+      "main secondary"
+      "tertiary tertiary";
+    gap: 1rem;
+    height: 60vh;
+  }
 
-.sidecar {
-  display: flex;
-  flex-direction: column;
+  &__main {
+    grid-area: main;
+  }
+
+  &__secondary {
+    grid-area: secondary;
+  }
+
+  &__tertiary {
+    grid-area: tertiary;
+  }
 }
 
 .element {
-  border-radius: 20px;
-  flex: 1;
+  border-radius: 10px;
   margin: 0.5rem;
   padding: 1rem 1.25rem;
-  background-color: teal;
-}
-
-.jumbo {
-  height: 20vh;
+  border: 1px solid #999;
 }
