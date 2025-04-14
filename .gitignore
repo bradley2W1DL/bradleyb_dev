@@ -27,3 +27,4 @@ yarn-error.log*
 
 # Still unsure if this needs to be committed or not
 .astro
+.env

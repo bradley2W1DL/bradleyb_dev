@@ -26,16 +26,22 @@
   }
 
   &__main {
+    display: grid;
     grid-area: main;
   }
 
   &__secondary {
+    display: grid;
     grid-area: secondary;
   }
 
   &__tertiary {
+    display: grid;
     grid-area: tertiary;
   }
+
+  // todo, use container queryies to hide/show content based
+  // on particular grid location of a given element
 }
 
 .element {
@@ -43,4 +49,6 @@
   margin: 0.5rem;
   padding: 1rem 1.25rem;
   border: 1px solid #999;
+  max-width: 100%;
+  background-color: white;
 }

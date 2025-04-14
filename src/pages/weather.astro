@@ -1,7 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from '../layouts/Layout.astro';
+import { actions } from 'astro:actions';
 import '../styles/weather.scss'
 
+export const prerender = false;
+
+const defaultLocation = { lat: 39.74386298827478, long: -105.52532873734599 } 
+const { data } = await Astro.callAction(actions.weather.getCurrent, defaultLocation);
 ---
 
 <Layout title="Weather">
@@ -12,20 +17,20 @@ import '../styles/weather.scss'
     </div>
 
     <div class="weather__content">
-      <div class="weather__main swapy-container element" data-swapy-slot="main">
-        <div data-swapy-item="main-item">
+      <div class="weather__main swapy-container" data-swapy-slot="main">
+        <div class="element" data-swapy-item="main-item">
           <h1>Current Weather for location</h1>
         </div>
       </div>
 
-      <div class="weather__secondary swapy-container element" data-swapy-slot="secondary">
-        <div data-swapy-item="secondary-item">
+      <div class="weather__secondary swapy-container" data-swapy-slot="secondary">
+        <div class="element" data-swapy-item="secondary-item">
           <p>Hourly weather</p>
         </div>
       </div>
 
-      <div class="weather__tertiary swapy-container element" data-swapy-slot="bottom-row">
-        <div data-swapy-item="bottom-item">
+      <div class="weather__tertiary swapy-container" data-swapy-slot="bottom-row">
+        <div class="element" data-swapy-item="bottom-item">
           <p>10 day forecast</p>
         </div>
       </div>
